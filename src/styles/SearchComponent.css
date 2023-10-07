@@ -1,6 +1,5 @@
 .search-style{
     float: left;
-    padding: 20px;
     width: 100%;
 }
 
@@ -10,7 +9,7 @@
 }
 
 .input-style {
-    width: 95%;
+    width: 100%;
     outline: 0;
     margin-top: 10px;
     border-width: 0 0 2px;

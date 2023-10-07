@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import SearchComponent from './SearchComponent'
 import ChatList from './ChatList'
+import '../styles/ChatContainer.css'
 
 const ChatComponent = () => {
     const [list, setList] = useState([]);
     const [filterList, setFilterList] = useState(list);
     const handleChange = (value) =>{
+        console.log('result');
         if(value.length === 0){
             setFilterList(list);
         } else {
@@ -17,7 +19,7 @@ const ChatComponent = () => {
         fetch('https://my-json-server.typicode.com/codebuds-fk/chat/chats ').then(res=> res.json().then(res=>{setList(res);setFilterList(res);}));
     },[])
     return (
-        <div style={{ display: 'flex', flexDirection: 'column'}}>
+        <div className='chat-container-parent'>
             <div>
                 <SearchComponent handleChange={handleChange}/>
             </div>

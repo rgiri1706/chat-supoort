@@ -36,6 +36,8 @@
 
 .list-box{
     flex: 1;
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 .chat-widget{

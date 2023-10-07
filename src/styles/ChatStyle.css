@@ -15,7 +15,17 @@
 
 .chat-window {
     border: 1px solid;
-    min-width: 80vh;
+    height: 100%;
+}
+
+.chat-parent-box{
+    position: relative;
+    height: 89vh;
+}
+
+.user-parent-box{
+    height: 14vh;
+    position: relative;
 }
 
 .bot-chat {
@@ -29,11 +39,11 @@
 }
 
 .user-chat{
-    width: 15%;
+    width: 25%;
     padding: 10px;
     position: absolute;
     right: 0;
-    margin-right: 10px;
+    margin-right: 18px;
     margin-top: 10px;
     background-color: rgb(110, 110, 232);
     color: white;
@@ -46,4 +56,11 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    bottom: 0px;
+}
+
+.chat-list-box{
+    height: 100%;
+    overflow-x: scroll;
 }

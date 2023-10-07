@@ -13,22 +13,24 @@ const ChatBox = ({chatData, handleInsert}) => {
                 <div><img src={chatData.imageURL} width={30} height={30} alt='item'/></div>
                 <div className='title'>{chatData.title}</div>
             </div>
-            <div>
-                {chatData.messageList.map(chat=>{
-                    if(chat.sender === 'BOT'){
+            <div className='chat-parent-box'>
+                <div className='chat-list-box'>
+                    {chatData.messageList.map(chat=>{
+                        if(chat.sender === 'BOT'){
+                                return (
+                                <div>
+                                <div className='bot-chat'>{chat.message}</div>
+                                </div>
+                                );
+                        } else {
                             return (
-                            <div>
-                            <div className='bot-chat'>{chat.message}</div>
-                            </div>
+                                <div className='user-parent-box'>
+                                    <div className='user-chat'>{chat.message}</div>
+                                </div>
                             );
-                    } else {
-                        return (
-                            <div style={{height: '14vh'}}>
-                                <div className='user-chat'>{chat.message}</div>
-                            </div>
-                        );
-                    }
-                })}
+                        }
+                    })}
+                </div>
                 <div className='input-styling'>
                     <div style={{flex: 11}}>
                         <input type='text' value={chat} onChange={(e)=> setChat(e.target.value)} style={{width: '100%'}}/>
